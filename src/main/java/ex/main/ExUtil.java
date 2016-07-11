@@ -9,9 +9,10 @@ public class ExUtil {
 		System.out.println(mod + " : " + (finish - start));
 	}
 
-	void addKeys(String keys, int key){
+	String addKeys(String keys, int key){
 
 		keys += key + " ";
 
+		return keys;
 	}
 }

@@ -4,9 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		new ExHashMaps();
+		new ExHashMaps(100, 10000);
 
-		new ExTreeMaps();
+		new ExTreeMaps(100, 10000);
 
 	}
 
