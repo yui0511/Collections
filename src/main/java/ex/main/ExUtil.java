@@ -7,6 +7,7 @@ public class ExUtil {
 		System.out.println(mod + " : start : " + start);
 		System.out.println(mod + " : finish : " + finish);
 		System.out.println(mod + " : " + (finish - start));
+		System.out.println("\n");
 	}
 
 	String addKeys(String keys, int key){

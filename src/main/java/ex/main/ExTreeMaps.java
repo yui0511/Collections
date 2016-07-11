@@ -1,44 +1,33 @@
 package ex.main;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
-public class ExTreeMaps {
+public class ExTreeMaps extends AbstractedMaps {
 
-	//declare iterator
-	 ExUtil util;
-
-	 TreeMap<Integer, String> treeMap;
-	 Iterator<Map.Entry<Integer, String>> iterator;
-
-	long begin, end;
-	String keys;
-
-	public ExTreeMaps (int mapSize, int randomRange) {
+	public ExTreeMaps (String type, int mapSize, int randomRange) {
 
 		// initialize
 		util = new ExUtil();
 
-		treeMap = new TreeMap<Integer, String>();
+		map = new TreeMap<Integer, String>();
 		keys = "\n";
 
-		// put values in treemap
+		// put values in map
 		begin = System.currentTimeMillis();
 		for (int i = 0; i < mapSize; i++){
 			int key = (int)(Math.random()*randomRange);
-			treeMap.put(key, "value");
+			map.put(key, "value");
 			keys = util.addKeys(keys, key);
 		}
 
 		end = System.currentTimeMillis();
-		util.printPerfomance("put/tree", begin, end);
-		System.out.println("treeMap keys : " + keys);
+		util.printPerfomance("put/" + type, begin, end);
+		System.out.println("map keys : " + keys);
 
-		// get entries from treemap
+		// get entries from map
 		// iterator
-		iterator = treeMap.entrySet().iterator();
+		iterator = map.entrySet().iterator();
 		System.out.println("");
 		begin = System.currentTimeMillis();
 		while(iterator.hasNext()){
@@ -46,7 +35,7 @@ public class ExTreeMaps {
 			System.out.println(entry.getKey() + " " + entry.hashCode());
 		}
 		end = System.currentTimeMillis();
-		util.printPerfomance("get/tree", begin, end);
+		util.printPerfomance("get/" + type, begin, end);
 
 	}
 

@@ -1,16 +1,13 @@
 package ex.main;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class ExHashMaps extends AbstractedMaps {
-
-	public ExHashMaps(String type, int mapSize, int randomRange){
+public class ExLinkedMaps extends AbstractedMaps {
+	public ExLinkedMaps(String type, int mapSize, int randomRange){
 
 		// initialize
-		map = new HashMap<Integer, String>();
+		map = new LinkedHashMap<Integer, String>();
 		util = new ExUtil();
 		keys = "\n";
 
@@ -41,18 +38,6 @@ public class ExHashMaps extends AbstractedMaps {
 
 		end = System.currentTimeMillis();
 		util.printPerfomance("get/" + type, begin, end);
-/*
-		// get entries from map
-		// for loop
-		System.out.println("");
-		startTime = System.currentTimeMillis();
-		for (int i : map.keySet()){
-			System.out.print(i + " ");
-		}
-		finishTime = System.currentTimeMillis();
-		printPerfomance("get/hash", startTime, finishTime);
-*/
 
-	} // end constructor
-
+	}
 }
